@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import RegisterPage from './page/register_page';
+import RegisterPage from './page/register';
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import { useState } from "react"
-import InputText from "../../global_component/input_text";
-import Button from "../../global_component/button";
+import InputText from "../components/InputBar";
+import Button from "../components/Button";
 
 const RegisterPage = () => {
     const [email, setEmail] = useState('');
