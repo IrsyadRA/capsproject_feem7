@@ -1,8 +1,9 @@
-import InputText from "../../global_component/input_text"
-import Button from "../../global_component/button"
-import ListCard from "./component/cardComponent"
-import data from "../../data"
+import InputText from "../components/InputBar"
+import Button from "../components/Button"
+import ListCard from "../components/CardList"
+import data from "../data"
 import { useState } from "react"
+
 const ListCoursePage = () => {
     const [keyword, setKeyword] = useState('');
 
@@ -32,7 +33,7 @@ const ListCoursePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-4 gap-x-4 gap-y-6">
+            <div className="grid grid-cols-4 gap-x-1 gap-y-6 justify-items-center">
                 {data.map((item) => {
                     return (
                         <ListCard
