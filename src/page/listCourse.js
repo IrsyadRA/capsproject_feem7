@@ -3,6 +3,7 @@ import Button from "../components/Button"
 import ListCard from "../components/CardList"
 import data from "../data"
 import { useState } from "react"
+import NavBar from "../components/NavBar"
 
 const ListCoursePage = () => {
     const [keyword, setKeyword] = useState('');
@@ -12,6 +13,7 @@ const ListCoursePage = () => {
     }
     return (
         <div className="max-w-screen-xl mx-auto mb-10">
+            <NavBar />
             <div className="flex flex-row h-20 items-end mb-10">
                 <div className="w-1/2 text-left h-full pt-3">
                     <h6 className="text-blue-500 font-semibold">Class available</h6>
