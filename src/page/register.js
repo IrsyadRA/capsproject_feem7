@@ -3,10 +3,18 @@ import InputText from "../components/InputBar";
 import Button from "../components/Button";
 
 const RegisterPage = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
+    const handleEmail = (e) => {
+        setEmail(e.target.value);
+    }
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+    }
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 max-h-screen w-full">
-            <div className="container w-2/4 h-screen flex flex-col items-center justify-center">
+            <div className="h-screen flex flex-col items-center justify-center">
                 <div className="text-left">
                     <img className="mb-4 w-44" src="./icon/logo_ebility.png" />
                     <h1 className="font-bold text-3xl mb-2.5">Sign up for an account</h1>
