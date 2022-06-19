@@ -3,6 +3,7 @@ import Button from "../components/Button"
 import ListCard from "../components/CardList"
 import data from "../data"
 import { useState } from "react"
+import NavBar from "../components/NavBar"
 
 const ListCoursePage = () => {
     const [keyword, setKeyword] = useState('');
@@ -11,9 +12,12 @@ const ListCoursePage = () => {
         setKeyword(e.target.value);
     }
     return (
-        <div>
+        <div className="relative">
+            <div className="sticky top-0">
+                <NavBar />
+            </div>
             <div className="max-w-screen bg-sky-50">
-                <div className="max-w-[1280px] mx-auto bg-sky-50">
+                <div className="max-w-[1280px] mx-auto">
                     <div className="grid grid-flow-col grid-cols-12 gap-12 py-36">
                         <div className="flex flex-col items-start text-left py-20 my-8 col-span-8">
                             <h1 className="text-6xl text-black font-bold"><span className="text-blue-600">Certified</span> Course Class</h1>
@@ -100,7 +104,7 @@ const ListCoursePage = () => {
                     })}
                 </div>
             </div>
-        </div >
+        </div>
 
     )
 }
