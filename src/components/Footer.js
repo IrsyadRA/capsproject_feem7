@@ -38,7 +38,7 @@ const Footer = () => {
                                     <a className="text-base text-gray-500" href="#">Jakarta, Indonesia</a>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <img className="w-6 h-6 mt-1" src="./icon/icon_message.png" />
+                                    <img className="w-6 h-6 mt-1" src="./icon/icon_mail.png" />
                                     <a className="text-base text-gray-500" href="#">gigih@ebility.com</a>
                                 </div>
                             </div>
