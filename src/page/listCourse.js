@@ -1,6 +1,8 @@
+
 import InputText from "../components/InputBar"
 import Button from "../components/Button"
 import ListCard from "../components/CardList"
+import Footer from "../components/Footer";
 import data from "../data"
 import { useState } from "react"
 import NavBar from "../components/NavBar"
@@ -13,7 +15,7 @@ const ListCoursePage = () => {
     }
     return (
         <div className="relative">
-            <div className="sticky top-0">
+            <div className="sticky top-0 left-0 right-0">
                 <NavBar />
             </div>
             <div className="max-w-screen bg-sky-50">
@@ -104,8 +106,8 @@ const ListCoursePage = () => {
                     })}
                 </div>
             </div>
+          <Footer/>
         </div>
-
     )
 }
 export default ListCoursePage;
