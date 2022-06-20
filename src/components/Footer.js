@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <div>
-            <div className="w-screen bg-sky-200">
+            <div className="w-screen bg-sky-50">
                 <div className="flex max-w-screen-xl mx-auto h-80 items-center justify-between">
                     <div className="w-96 text-left ml-20 pt-5">
                         <img className="w-64 mb-6" src="./icon/logo_ebility.png" />
