@@ -1,6 +1,7 @@
 import { useState } from "react"
 import InputText from "../components/InputBar";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
     const [email, setEmail] = useState('');
@@ -22,21 +23,33 @@ const RegisterPage = () => {
                     <form>
                         <label className="font-semibold">Email Address</label>
                         <InputText
-                            style="mt-2.5 mb-6 w-96 h-14 border-2 border-gray-400 rounded-lg p-2.5"
+                            style="peer mt-2.5 w-96 h-14 border-2 border-gray-400 rounded-lg p-2.5 
+                            invalid:border-pink-500 invalid:text-pink-600"
                             value={email}
                             onChange={handleEmail}
                             placeHolder='Email Address'
-                            type='text'
-                        />
+                            type='email'
+                            testid="email-input"
+                        >
+                            <p className="invisible peer-invalid:visible text-pink-600 text-sm mb-4">
+                                Please provide a valid email address.
+                            </p>
+                        </InputText>
                         <label className="font-semibold">Password</label>
                         <InputText
-                            style='mt-2.5 mb-6 w-96 h-14 border-2 border-gray-400 rounded-lg p-2.5'
+                            style='peer w-96 h-14 border-2 border-gray-400 rounded-lg p-2.5 invalid:border-pink-500 invalid:text-pink-600'
                             value={password}
                             onChange={handlePassword}
                             placeHolder='Password'
                             type='password'
-                        />
-                        <div className="flex">
+                            testid="password-input"
+                        >
+                            {password.length < 10 &&
+                                <p className="text-pink-600 text-sm mb-4">
+                                    Password must be 10 character minimum.
+                                </p>}
+                        </InputText>
+                        <div className="flex mt-4">
                             <input type="checkbox" className="w-4 h-4 rounded cursor-pointer mt-1 align-top mr-2" />
                             <p className="text-gray-400">I accept the <span><a href="#" className="font-semibold text-blue-500">Terms of use</a></span> and <span><a href="#" className="font-semibold text-blue-500">Subscription</a></span></p>
                         </div>
@@ -44,7 +57,7 @@ const RegisterPage = () => {
                             btnName="Sign Up"
                             style="mt-10 mb-6 w-96 h-14 rounded-lg bg-blue-500 text-white font-semibold"
                         />
-                        <p className="text-center text-gray-400">Already have an account? <span><a href="#" className="font-semibold text-blue-500">Sign In</a></span></p>
+                        <p className="text-center text-gray-400">Already have an account? <span><Link className="font-semibold text-blue-500" to="/">Sign In</Link></span></p>
                     </form>
                 </div>
             </div>
