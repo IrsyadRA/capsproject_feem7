@@ -1,17 +1,24 @@
 import React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { accessLogin } from "../Store/actions";
 import Button from "../components/Button";
 import InputText from "../components/InputBar";
 import { Link } from "react-router-dom";
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
   }
   const handlePassword = (e) => {
     setPassword(e.target.value);
+  }
+  const handleLogin = (e) => {
+    dispatch(accessLogin(true));
+    console.log(accessLogin);
   }
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 max-h-screen w-full">
@@ -44,10 +51,10 @@ const LoginPage = () => {
               type='password'
               testid="password-input"
             >
-              {password.length <10 && 
-              <p className="text-pink-600 text-sm mb-4">
-                Password must be 10 character minimum.
-              </p>}
+              {password.length < 10 &&
+                <p className="text-pink-600 text-sm mb-4">
+                  Password must be 10 character minimum.
+                </p>}
             </InputText>
             <div className="flex justify-between mt-4">
               <div className="flex">
@@ -58,11 +65,14 @@ const LoginPage = () => {
                 <a className="text-blue-500" href="#">Forgot Password?</a>
               </div>
             </div>
-            <Button
-              btnName="Sign In"
-              style="mt-10 mb-6 w-96 h-14 rounded-lg bg-blue-500 text-white font-semibold"
-              testid="btnlogin"
-            />
+            <Link to="/">
+              <Button
+                btnName="Sign In"
+                style="mt-10 mb-6 w-96 h-14 rounded-lg bg-blue-500 text-white font-semibold"
+                testid="btnlogin"
+                click={handleLogin}
+              />
+            </Link>
             <p className="text-center text-gray-400">Not registered yet? <span><Link className="font-semibold text-blue-500" to="/register">Create a new account</Link></span></p>
           </form>
         </div>

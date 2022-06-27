@@ -3,9 +3,9 @@ import InputText from "../components/InputBar"
 import Button from "../components/Button"
 import ListCard from "../components/CardList"
 import Footer from "../components/Footer";
-import data from "../data"
+import data from "../Store/data"
 import { useState } from "react"
-import NavBar from "../components/NavBar"
+import Navbar from "../components/Navbar/Navbar"
 
 const ListCoursePage = () => {
     const [keyword, setKeyword] = useState('');
@@ -16,7 +16,7 @@ const ListCoursePage = () => {
     return (
         <div className="relative">
             <div className="sticky top-0 left-0 right-0">
-                <NavBar />
+                <Navbar />
             </div>
             <div className="max-w-screen bg-sky-50">
                 <div className="max-w-[1280px] mx-auto">
@@ -99,6 +99,7 @@ const ListCoursePage = () => {
                         return (
                             <ListCard
                                 key={item.id}
+                                keyid={item.id}
                                 imgSrc={item.img}
                                 title={item.title}
                             />
