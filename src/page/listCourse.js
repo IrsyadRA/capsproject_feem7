@@ -1,17 +1,20 @@
 
 import InputText from "../components/InputBar"
-import Button from "../components/Button"
+import Button from "../components/Button";
 import ListCard from "../components/CardList"
 import Footer from "../components/Footer";
 import data from "../Store/data"
 import { useState } from "react"
-import Navbar from "../components/Navbar/Navbar"
+import Navbar from "../components/Navbar";
 
 const ListCoursePage = () => {
     const [keyword, setKeyword] = useState('');
 
     const handleKeyword = (e) => {
         setKeyword(e.target.value);
+    }
+    const handlebtn=()=>{
+
     }
     return (
         <div className="relative">
@@ -26,7 +29,9 @@ const ListCoursePage = () => {
                             <p className="text-xl text-gray-400 mt-4 font-medium-1">Intensive and structured classes for 2 months, guided by experienced mentors</p>
                             <Button
                                 btnName="Take Class"
-                                style="mt-10 mb-6 w-96 h-14 rounded-lg bg-blue-500 text-white font-semibold"
+                                design="mt-10 mb-6 w-96 h-14 rounded-lg bg-blue-500 text-white font-semibold"
+                                testid="btn-browse-class"
+                                click={handlebtn}
                             />
                         </div>
                         <div className="hidden sm:block col-span-8 col-start-9">
@@ -89,7 +94,9 @@ const ListCoursePage = () => {
                             />
                             <Button
                                 btnName='Search'
-                                style='w-32 h-12 rounded-lg bg-blue-500 text-white font-semibold'
+                                design='w-32 h-12 rounded-lg bg-blue-500 text-white font-semibold'
+                                testid="btn-search-class"
+                                click={handlebtn}
                             />
                         </div>
                     </div>

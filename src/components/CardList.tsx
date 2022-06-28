@@ -1,5 +1,10 @@
-import { Link } from "react-router-dom";
-const ListCard = ({keyid, imgSrc, title}) => {
+import {Link} from "react-router-dom";
+interface Props {
+    keyid: string,
+    imgSrc: string,
+    title: string,
+  }
+const ListCard = ({keyid, imgSrc, title}:Props) => {
     return (
         <div>
             <Link className="w-72 text-left text-lg font-semibold" to={"detail/"+keyid}>

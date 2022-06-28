@@ -30,7 +30,7 @@ const LoginPage = () => {
           <form>
             <label className="font-semibold" for="email">Email Address</label>
             <InputText
-              style="peer mt-2.5 w-96 h-14 border-2 border-gray-400 rounded-lg p-2.5 
+              design="peer mt-2.5 w-96 h-14 border-2 border-gray-400 rounded-lg p-2.5 
               invalid:border-pink-500 invalid:text-pink-600"
               value={email}
               onChange={handleEmail}
@@ -44,7 +44,7 @@ const LoginPage = () => {
             </InputText>
             <label className="font-semibold" for="password">Password</label>
             <InputText
-              style='peer w-96 h-14 border-2 border-gray-400 rounded-lg p-2.5 invalid:border-pink-500 invalid:text-pink-600'
+              design='peer w-96 h-14 border-2 border-gray-400 rounded-lg p-2.5 invalid:border-pink-500 invalid:text-pink-600'
               value={password}
               onChange={handlePassword}
               placeholder='Password'
@@ -68,7 +68,7 @@ const LoginPage = () => {
             <Link to="/">
               <Button
                 btnName="Sign In"
-                style="mt-10 mb-6 w-96 h-14 rounded-lg bg-blue-500 text-white font-semibold"
+                design="mt-10 mb-6 w-96 h-14 rounded-lg bg-blue-500 text-white font-semibold"
                 testid="btnlogin"
                 click={handleLogin}
               />
