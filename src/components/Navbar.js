@@ -35,7 +35,7 @@ const Navbar = () => {
             Course
           </Link>
           <Link
-            href="/"
+            to="/"
             className="block active:text-blue-500 lg:text-lg text-gray-400 hover:border-b-2 hover:border-blue-500 hover:text-blue-500"
           >
             Job Vacancy
