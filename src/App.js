@@ -1,13 +1,27 @@
-// import logo from './logo.svg';
 import './App.css';
-// import LoginPage from './page/login';
 import JobVacancyPage from './page/jobVacancy';
+import RegisterPage from './page/register';
+import LoginPage from './page/login';
+import ListCoursePage from './page/listCourse';
+import { Switch, Route, Router } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      {/* <LoginPage/> */}
-      <JobVacancyPage/>
+      <Switch>
+        <Route path="/register">
+          <RegisterPage />
+        </Route>
+        <Route path="/login">
+          <LoginPage />
+        </Route>
+        {/* <Route path="/detail/:id">
+          <DetailCoursePage />
+        </Route> */}
+        <Route path="/">
+          <ListCoursePage />
+        </Route>
+      </Switch>
     </div>
   );
 }
