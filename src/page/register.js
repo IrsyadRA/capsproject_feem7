@@ -17,7 +17,7 @@ const RegisterPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 max-h-screen w-full">
             <div className="h-screen flex flex-col items-center justify-center">
                 <div className="text-left">
-                    <img className="mb-4 w-44" src="./icon/logo_ebility.png" alt="/"/>
+                    <img className="mb-4 w-44" src="./icon/logo_ebility.png" alt="/" />
                     <h1 className="font-bold text-3xl mb-2.5">Sign up for an account</h1>
                     <p className="text-gray-400 mb-10">Ready to be part of the digital controller?</p>
                     <form>
@@ -53,11 +53,13 @@ const RegisterPage = () => {
                             <input type="checkbox" className="w-4 h-4 rounded cursor-pointer mt-1 align-top mr-2" />
                             <p className="text-gray-400">I accept the <span><a href="#" className="font-semibold text-blue-500">Terms of use</a></span> and <span><a href="#" className="font-semibold text-blue-500">Subscription</a></span></p>
                         </div>
-                        <Button
-                            btnName="Sign Up"
-                            design="mt-10 mb-6 w-96 h-14 rounded-lg bg-blue-500 text-white font-semibold"
-                        />
-                        <p className="text-center text-gray-400">Already have an account? <span><Link className="font-semibold text-blue-500" to="/">Sign In</Link></span></p>
+                        <Link to="/">
+                            <Button
+                                btnName="Sign Up"
+                                design="mt-10 mb-6 w-96 h-14 rounded-lg bg-blue-500 text-white font-semibold"
+                            />
+                        </Link>
+                        <p className="text-center text-gray-400">Already have an account? <span><Link className="font-semibold text-blue-500" to="/login">Sign In</Link></span></p>
                     </form>
                 </div>
             </div>

@@ -4,15 +4,15 @@ const Footer = () => {
             <div className="w-screen bg-sky-50">
                 <div className="flex max-w-screen-xl mx-auto h-80 items-center justify-between">
                     <div className="w-96 text-left ml-20 pt-5">
-                        <img className="w-64 mb-6" src="./icon/logo_ebility.png" />
+                        <img className="w-64 mb-6" src="/icon/logo_ebility.png" />
                         <p className="text-base text-gray-500 mb-6">Maximize your career by taking a series of courses tailored to today's industry needs</p>
                         <p className="text-xl text-gray-500 mb-3">Unduh Aplikasi</p>
                         <div className="flex gap-4  pb-5">
                             <a href="#">
-                                <img className="w-32" src="./icon/icon_app_store.png" />
+                                <img className="w-32" src="/icon/icon_app_store.png" />
                             </a>
                             <a href="#">
-                                <img className="w-32" src="./icon/icon_google_play.png" />
+                                <img className="w-32" src="/icon/icon_google_play.png" />
                             </a>
                         </div>
                     </div>
@@ -34,11 +34,11 @@ const Footer = () => {
                             <div className="flex flex-col gap-1 text-left ">
                                 <p className="text-xl text-blue-500 font-semibold">Contact Us</p>
                                 <div className="flex items-center gap-3">
-                                    <img className="w-6 h-6 mt-1" src="./icon/icon_location.png" />
+                                    <img className="w-6 h-6 mt-1" src="/icon/icon_location.png" />
                                     <a className="text-base text-gray-500" href="#">Jakarta, Indonesia</a>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <img className="w-6 h-6 mt-1" src="./icon/icon_mail.png" />
+                                    <img className="w-6 h-6 mt-1" src="/icon/icon_mail.png" />
                                     <a className="text-base text-gray-500" href="#">gigih@ebility.com</a>
                                 </div>
                             </div>

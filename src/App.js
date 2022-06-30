@@ -2,6 +2,8 @@ import './App.css';
 import RegisterPage from './page/register';
 import LoginPage from './page/login';
 import ListCoursePage from './page/listCourse';
+import DetailCoursePage from './page/detailCourse';
+import MyCoursePage from './page/myCourse';
 import { Switch, Route, Router } from 'react-router-dom';
 
 function App() {
@@ -14,9 +16,12 @@ function App() {
         <Route path="/login">
           <LoginPage />
         </Route>
-        {/* <Route path="/detail/:id">
+        <Route path="/detail/:id">
           <DetailCoursePage />
-        </Route> */}
+        </Route>
+        <Route path="/mycourse">
+          <MyCoursePage />
+        </Route>
         <Route path="/">
           <ListCoursePage />
         </Route>

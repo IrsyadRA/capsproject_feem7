@@ -1,9 +1,8 @@
-
 import InputText from "../components/InputBar"
 import Button from "../components/Button";
 import ListCard from "../components/CardList"
 import Footer from "../components/Footer";
-import data from "../Store/data"
+import data from "../Store/dataCourse"
 import { useState } from "react"
 import Navbar from "../components/Navbar";
 
@@ -86,7 +85,7 @@ const ListCoursePage = () => {
                     <div className="w-1/2">
                         <div className="flex justify-end gap-x-3 h-full">
                             <InputText
-                                style='w-96 h-12 border-2 border-gray-400 rounded-lg p-2.5'
+                                design='w-96 h-12 border-2 border-gray-400 rounded-lg p-2.5'
                                 value={keyword}
                                 onChange={handleKeyword}
                                 placeholder="Search Course"
