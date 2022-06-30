@@ -23,6 +23,9 @@ function App() {
         <Route path="/mycourse">
           <MyCoursePage />
         </Route>
+        <Route path="/job">
+          <JobVacancyPage />
+        </Route>
         <Route path="/">
           <ListCoursePage />
         </Route>
