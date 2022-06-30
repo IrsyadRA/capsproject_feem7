@@ -1,4 +1,5 @@
 import './App.css';
+import JobVacancyPage from './page/jobVacancy';
 import RegisterPage from './page/register';
 import LoginPage from './page/login';
 import ListCoursePage from './page/listCourse';
