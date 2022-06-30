@@ -17,7 +17,7 @@ const LoginPage = () => {
     setPassword(e.target.value);
   }
   const handleLogin = (e) => {
-    if (email === '' || password.length <= 10) {
+    /* if (email === '' || password.length <= 10) {
       return (
         <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
           <div class="flex">
@@ -29,14 +29,14 @@ const LoginPage = () => {
           </div>
         </div>
       )
-    }
+    } */
     dispatch(accessLogin(true));
   }
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 max-h-screen w-full">
       <div className="h-screen flex flex-col items-center justify-center">
         <div className="text-left">
-          <img className="mb-4 w-44" src="./icon/logo_ebility.png" />
+          <img className="mb-4 w-44" src="./icon/logo_ebility.png" alt="/"/>
           <h1 className="font-bold text-3xl mb-2.5">Sign in to your account</h1>
           <p className="text-gray-400 mb-10 w-80">Maximize your talent by taking courses that have been provided by the Ebility in full</p>
           <form>
@@ -74,7 +74,7 @@ const LoginPage = () => {
                 <p className="text-gray-400">Keep me signed in</p>
               </div>
               <div>
-                <a className="text-blue-500" href="#">Forgot Password?</a>
+                <a className="text-blue-500" href="/#">Forgot Password?</a>
               </div>
             </div>
             <Link to="/">

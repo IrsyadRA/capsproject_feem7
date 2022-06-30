@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import Button from "../components/Button"
 import Navbar from "../components/Navbar"
@@ -11,13 +11,23 @@ const DetailCoursePage = () => {
     const [dataObj, setDataObject] = useState({});
     const { id } = useParams()
     const dispatch = useDispatch()
-    
+    const getMyCourse = useSelector((state) => state.buyCourse)
+
     useEffect(() => {
         const dataObj = data.find((d) => d.id === id);
         setDataObject(dataObj)
     }, [id])
     const handleBtnBuy = () => {
-        dispatch(buyCourse({id: dataObj.id, img: dataObj.img, title: dataObj.title}));
+        if (getMyCourse.length !== 0) {
+            const check = getMyCourse.some((item) => { return item.id === id })
+            if (check) {
+                console.log("Already add")
+            } else {
+                dispatch(buyCourse({ id: dataObj.id, img: dataObj.img, title: dataObj.title, desc: dataObj.desc }));
+            }
+        } else {
+            dispatch(buyCourse({ id: dataObj.id, img: dataObj.img, title: dataObj.title, desc: dataObj.desc }));
+        }
     }
     return (
         <div className="relative">
@@ -35,7 +45,7 @@ const DetailCoursePage = () => {
                     </div>
                     <div className="col-span-8 col-start-11">
                         <Button
-                            btnName={dataObj.price}
+                            btnName={"Buy - " + dataObj.price}
                             design="mt-10 mb-6 w-96 h-14 rounded-lg bg-blue-500 text-white font-semibold"
                             click={handleBtnBuy}
                             testid="btn-buy"

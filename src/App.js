@@ -1,5 +1,4 @@
 // import logo from './logo.svg';
-import MyClassPage from './page/myclass';
 import './App.css';
 import JobVacancyPage from './page/jobVacancy';
 import RegisterPage from './page/register';
@@ -7,7 +6,7 @@ import LoginPage from './page/login';
 import ListCoursePage from './page/listCourse';
 import DetailCoursePage from './page/detailCourse';
 import MyCoursePage from './page/myCourse';
-import { Switch, Route, Router } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return (

@@ -51,7 +51,7 @@ const RegisterPage = () => {
                         </InputText>
                         <div className="flex mt-4">
                             <input type="checkbox" className="w-4 h-4 rounded cursor-pointer mt-1 align-top mr-2" />
-                            <p className="text-gray-400">I accept the <span><a href="#" className="font-semibold text-blue-500">Terms of use</a></span> and <span><a href="#" className="font-semibold text-blue-500">Subscription</a></span></p>
+                            <p className="text-gray-400">I accept the <span><a href="/#" className="font-semibold text-blue-500">Terms of use</a></span> and <span><a href="/#" className="font-semibold text-blue-500">Subscription</a></span></p>
                         </div>
                         <Link to="/">
                             <Button

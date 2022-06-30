@@ -3,8 +3,8 @@ import Button from "../components/Button";
 const ListClass = ({ imgSrc, title, duration, intro }) => {
     return (
         <div class="grid grid-cols-3 gap-4 border px-8 py-8 mb-14 rounded-xl shadow-lg">
-            <div className="">
-                <img className="rounded-xl" src={imgSrc} alt="/" />
+            <div>
+                <img className="object-cover h-72 rounded-xl" src={imgSrc} alt="/" />
             </div>
 
             <div class="col-span-2 items-start text-left pt-6">
@@ -21,12 +21,12 @@ const ListClass = ({ imgSrc, title, duration, intro }) => {
                 <div className="flex gap-4">
                     <Button
                         btnName='Detail Class'
-                        style='w-48 h-12 rounded-lg bg-blue-500 text-white font-semibold'
+                        design='w-48 h-12 rounded-lg bg-blue-500 text-white font-semibold'
                     />
 
                     <Button
                         btnName='Certificate'
-                        style='w-48 h-12 rounded-lg bg-blue-500 text-white font-semibold'
+                        design='w-48 h-12 rounded-lg bg-blue-500 text-white font-semibold'
                     />
                 </div>
             </div>

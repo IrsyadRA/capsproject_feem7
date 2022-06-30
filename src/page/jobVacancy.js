@@ -3,6 +3,8 @@ import InputText from "../components/InputBar"
 import { useState } from "react"
 import ListJob from "../components/ListJob"
 import dataJob from "../Store/dataJob";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const JobVacancyPage = () => {
     const [keyword, setKeyword] = useState('');
@@ -13,6 +15,9 @@ const JobVacancyPage = () => {
 
     return (
         <div className="max-w-screen ">
+            <div className="sticky top-0 left-0 right-0">
+                <Navbar />
+            </div>
             <div className="max-w-[1280px] mx-auto py-20">
                 <div className="grid grid-flow-col grid-cols-12 gap-12 py-20">
                     <div className="flex flex-col items-start text-left py-20 my-8 col-span-8">
@@ -65,6 +70,7 @@ const JobVacancyPage = () => {
                     })}
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

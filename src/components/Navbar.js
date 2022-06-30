@@ -57,7 +57,7 @@ const Navbar = () => {
         {accessLogin === true &&
           <div className="flex">
             <div className="flex gap-3 items-center">
-              <img className="w-8" src="/icon/icon_user.png" />
+              <img className="w-8" src="/icon/icon_user.png" alt="/"/>
               <p>irsyad@gmail.com</p>
             </div>
           </div>
