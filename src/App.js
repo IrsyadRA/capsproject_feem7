@@ -1,3 +1,5 @@
+// import logo from './logo.svg';
+import MyClassPage from './page/myclass';
 import './App.css';
 import JobVacancyPage from './page/jobVacancy';
 import RegisterPage from './page/register';
