@@ -5,11 +5,12 @@ import Footer from "../components/Footer";
 import data from "../Store/dataCourse"
 import { useState } from "react"
 import Navbar from "../components/Navbar";
+import {dataCourse} from "../types/component"
 
 const ListCoursePage = () => {
     const [keyword, setKeyword] = useState('');
 
-    const handleKeyword = (e) => {
+    const handleKeyword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setKeyword(e.target.value);
     }
     const handlebtn=()=>{
@@ -90,7 +91,10 @@ const ListCoursePage = () => {
                                 onChange={handleKeyword}
                                 placeholder="Search Course"
                                 type='text'
-                            />
+                                testid="input-search-course"
+                            >
+                                <div></div>
+                            </InputText>
                             <Button
                                 btnName='Search'
                                 design='w-32 h-12 rounded-lg bg-blue-500 text-white font-semibold'
@@ -101,14 +105,9 @@ const ListCoursePage = () => {
                     </div>
                 </div>
                 <div className="grid grid-cols-4 gap-x-1 gap-y-6 justify-items-center">
-                    {data.map((item) => {
+                    {data.map((datacourse: dataCourse) => {
                         return (
-                            <ListCard
-                                key={item.id}
-                                keyid={item.id}
-                                imgSrc={item.img}
-                                title={item.title}
-                            />
+                            <ListCard cardlist={datacourse} key={datacourse.id}/>
                         )
                     })}
                 </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { useParams } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 import Button from "../components/Button"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
@@ -11,23 +11,30 @@ const DetailCoursePage = () => {
     const [dataObj, setDataObject] = useState({});
     const { id } = useParams()
     const dispatch = useDispatch()
+    const history = useHistory()
     const getMyCourse = useSelector((state) => state.buyCourse)
+    const getAccess = useSelector((state) => state.accessLogin)
 
     useEffect(() => {
         const dataObj = data.find((d) => d.id === id);
         setDataObject(dataObj)
     }, [id])
     const handleBtnBuy = () => {
-        if (getMyCourse.length !== 0) {
-            const check = getMyCourse.some((item) => { return item.id === id })
-            if (check) {
-                console.log("Already add")
+        if(getAccess){
+            if (getMyCourse.length !== 0) {
+                const check = getMyCourse.some((item) => { return item.id === id })
+                if (check) {
+                    console.log("Already add")
+                } else {
+                    dispatch(buyCourse({ id: dataObj.id, img: dataObj.img, title: dataObj.title, desc: dataObj.desc }));
+                }
             } else {
                 dispatch(buyCourse({ id: dataObj.id, img: dataObj.img, title: dataObj.title, desc: dataObj.desc }));
             }
-        } else {
-            dispatch(buyCourse({ id: dataObj.id, img: dataObj.img, title: dataObj.title, desc: dataObj.desc }));
+        }else{
+            history.push('/login')
         }
+        
     }
     return (
         <div className="relative">

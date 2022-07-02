@@ -2,16 +2,22 @@ import { useState } from "react"
 import InputText from "../components/InputBar";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { accessLogin } from "../Store/actions";
 
 const RegisterPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const dispatch = useDispatch();
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
     }
     const handlePassword = (e) => {
         setPassword(e.target.value);
+    }
+    const handleRegis = (e) => {
+        dispatch(accessLogin(true));
     }
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 max-h-screen w-full">
@@ -57,6 +63,7 @@ const RegisterPage = () => {
                             <Button
                                 btnName="Sign Up"
                                 design="mt-10 mb-6 w-96 h-14 rounded-lg bg-blue-500 text-white font-semibold"
+                                click={handleRegis}
                             />
                         </Link>
                         <p className="text-center text-gray-400">Already have an account? <span><Link className="font-semibold text-blue-500" to="/login">Sign In</Link></span></p>

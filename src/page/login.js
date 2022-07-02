@@ -40,7 +40,7 @@ const LoginPage = () => {
           <h1 className="font-bold text-3xl mb-2.5">Sign in to your account</h1>
           <p className="text-gray-400 mb-10 w-80">Maximize your talent by taking courses that have been provided by the Ebility in full</p>
           <form>
-            <label className="font-semibold" for="email">Email Address</label>
+            <label className="font-semibold" htmlFor="email">Email Address</label>
             <InputText
               design="peer mt-2.5 w-96 h-14 border-2 border-gray-400 rounded-lg p-2.5 
               invalid:border-pink-500 invalid:text-pink-600"
@@ -54,7 +54,7 @@ const LoginPage = () => {
                 Please provide a valid email address.
               </p>
             </InputText>
-            <label className="font-semibold" for="password">Password</label>
+            <label className="font-semibold" htmlFor="password">Password</label>
             <InputText
               design='peer w-96 h-14 border-2 border-gray-400 rounded-lg p-2.5 invalid:border-pink-500 invalid:text-pink-600'
               value={password}

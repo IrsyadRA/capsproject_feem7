@@ -1,17 +1,14 @@
 import {Link} from "react-router-dom";
-interface Props {
-    keyid: string,
-    imgSrc: string,
-    title: string,
-  }
-const ListCard = ({keyid, imgSrc, title}:Props) => {
+import { cardList } from "../types/component";
+
+const ListCard = ({cardlist}:{cardlist: cardList}) => {
     return (
         <div>
-            <Link className="w-72 text-left text-lg font-semibold" to={"detail/"+keyid}>
+            <Link className="w-72 text-left text-lg font-semibold" to={"detail/"+cardlist.id}>
                 <div className="rounded-xl w-72 h-72 bg-gray-200 py-3.5 shadow-md">
-                    <img src={imgSrc} className="object-cover rounded-xl w-64 h-64 mx-auto" alt="/"/>
+                    <img src={cardlist.img} className="object-cover rounded-xl w-64 h-64 mx-auto" alt="/"/>
                 </div>
-                <p className="mt-2 truncate w-64">{title}</p>
+                <p className="mt-2 truncate w-64">{cardlist.title}</p>
             </Link>
         </div>
     )
