@@ -1,8 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-const Navbar = () => {
-  const accessLogin = useSelector((state) => state.accessLogin)
+import { accessLogin } from "../Store/actions";
+const Navbar = ({course}) => {
+  const accessLoginState = useSelector((state) => state.accessLogin)
+  const dispatch = useDispatch()
+  const handleAccess=()=>dispatch(accessLogin(false))
   return (
     <div className="w-screen border-b-2 bg-white">
       <div className="flex lg:py-2 lg:px-0 py-4 px-5 justify-between max-w-7xl lg:mx-auto items-center my-2">
@@ -12,15 +15,16 @@ const Navbar = () => {
         </div>
         {/* navigation */}
         <div className="flex items-center lg:gap-5 gap-2 ">
-          {accessLogin === false &&
+          {accessLoginState === false &&
             <Link
               to="/"
+              onClick={()=>window.scrollTo(0,0)}
               className="block active:text-blue-500 lg:text-lg text-gray-400 hover:border-b-2 hover:border-blue-500 hover:text-blue-500"
             >
               Home
             </Link>
           }
-          {accessLogin === true &&
+          {accessLoginState === true &&
             <Link
               to="/mycourse"
               className="block active:text-blue-500 lg:text-lg text-gray-400 hover:border-b-2 hover:border-blue-500 hover:text-blue-500"
@@ -30,6 +34,7 @@ const Navbar = () => {
           }
           <Link
             to="/"
+            onClick={course}
             className="block active:text-blue-500 lg:text-lg text-gray-400 hover:border-b-2 hover:border-blue-500 hover:text-blue-500"
           >
             Course
@@ -42,7 +47,7 @@ const Navbar = () => {
           </Link>
         </div>
         {/* btn or user */}
-        {accessLogin === false &&
+        {accessLoginState === false &&
           <div className="flex">
             <div className="flex lg:gap-5 gap-2">
               <Link className="bg-blue-500 lg:px-5 rounded-lg my-auto py-3 text-sm lg:text-base text-white font-semibold" to="/register">
@@ -54,11 +59,14 @@ const Navbar = () => {
             </div>
           </div>
         }
-        {accessLogin === true &&
+        {accessLoginState === true &&
           <div className="flex">
             <div className="flex gap-3 items-center">
               <img className="w-8" src="/icon/icon_user.png" alt="/"/>
               <p>irsyad@gmail.com</p>
+              <Link className="bg-red-500 lg:px-5 rounded-lg my-auto py-1 text-sm lg:text-base text-white" to="/" onClick={handleAccess}>
+                Logout
+              </Link>
             </div>
           </div>
         }

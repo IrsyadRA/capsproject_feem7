@@ -11,7 +11,7 @@ import { useSelector } from "react-redux"
 function App() {
   const getAccess = useSelector((state) => state.accessLogin)
   return (
-    <div className="App">
+    <div>
       <Switch>
         <Route path="/register">
           <RegisterPage />
@@ -19,11 +19,11 @@ function App() {
         <Route path="/login">
           <LoginPage />
         </Route>
-        <Route path="/detail/:id">
+        <Route path="/courses/:id">
           <DetailCoursePage />
         </Route>
         <Route path="/mycourse">
-          {getAccess?<MyCoursePage />:<Redirect to='/'/>}
+          {getAccess ? <MyCoursePage /> : <Redirect to='/' />}
         </Route>
         <Route path="/job">
           <JobVacancyPage />

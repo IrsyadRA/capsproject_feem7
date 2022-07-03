@@ -6,10 +6,12 @@ import data from "../Store/dataCourse"
 import { useState } from "react"
 import Navbar from "../components/Navbar";
 import {dataCourse} from "../types/component"
+import React from "react";
 
 const ListCoursePage = () => {
     const [keyword, setKeyword] = useState('');
-
+    const listCourseSection = React.useRef<HTMLInputElement>(null);
+    const executeScroll = () => listCourseSection.current?.scrollIntoView()
     const handleKeyword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setKeyword(e.target.value);
     }
@@ -18,8 +20,10 @@ const ListCoursePage = () => {
     }
     return (
         <div className="relative">
-            <div className="sticky top-0 left-0 right-0">
-                <Navbar />
+             <div className="sticky top-0 left-0 right-0">
+                <Navbar 
+                    course={executeScroll}
+                />
             </div>
             <div className="max-w-screen bg-sky-50">
                 <div className="max-w-[1280px] mx-auto">
@@ -31,7 +35,7 @@ const ListCoursePage = () => {
                                 btnName="Take Class"
                                 design="mt-10 mb-6 w-96 h-14 rounded-lg bg-blue-500 text-white font-semibold"
                                 testid="btn-browse-class"
-                                click={handlebtn}
+                                click={executeScroll}
                             />
                         </div>
                         <div className="hidden sm:block col-span-8 col-start-9">
@@ -40,7 +44,7 @@ const ListCoursePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="max-w-6xl mx-auto my-40">
+            <div className="max-w-6xl mx-auto my-32">
                 <div className="text-center">
                     <p className="text-xl text-sky-500 font-bold">Course Scheme</p>
                     <h1 className="text-6xl text-black font-bold">How to Study at Ebility</h1>
@@ -77,7 +81,7 @@ const ListCoursePage = () => {
                 </div>
 
             </div>
-            <div className="max-w-screen-xl mx-auto mb-10">
+            <div className="max-w-screen-xl mx-auto mb-10 pt-20" ref={listCourseSection}>
                 <div className="flex flex-row h-20 items-end mb-10">
                     <div className="w-1/2 text-left h-full pt-3">
                         <h6 className="text-blue-500 font-semibold">Class available</h6>

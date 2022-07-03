@@ -81,9 +81,7 @@ const DetailCoursePage = () => {
                     <p className="text-justify pt-3">{dataObj.period}</p>
                 </div>
             </div>
-            <div>
-                <Footer />
-            </div>
+            <Footer />
         </div>
 
     )
